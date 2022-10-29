@@ -7,7 +7,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 function CommentInput(props) {
-  const [body, setBody] = useState("")
+  const [body, setBody] = useState("");
   const createComment = (ev) => {
     ev.preventDefault();
     agent.Comments.create(props.slug, {
@@ -16,7 +16,7 @@ function CommentInput(props) {
       props.onSubmit(payload);
     });
     setBody("");
-  }
+  };
 
   return (
     <form className="card comment-form m-2" onSubmit={createComment}>
@@ -41,7 +41,6 @@ function CommentInput(props) {
       </div>
     </form>
   );
-
 }
 
 export default connect(() => ({}), mapDispatchToProps)(CommentInput);
