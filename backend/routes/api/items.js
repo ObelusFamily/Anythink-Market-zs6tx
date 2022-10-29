@@ -163,8 +163,7 @@ router.get("/:item", auth.optional, function(req, res, next) {
     req.item.populate("seller").execPopulate()
   ])
     .then(function(results) {
-      var user = results[0];
-
+      var user = results[1];
       return res.json({ item: req.item.toJSONFor(user) });
     })
     .catch(next);
